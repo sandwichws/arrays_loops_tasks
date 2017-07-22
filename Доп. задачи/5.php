@@ -8,26 +8,28 @@
 <br><br>
 
      РЕШЕНИЕ:<br><br>
-		 $varl = "(";<br>
-	 	$varr = ")";<br>
-	 	$lCount = 0;<br>
-	 	$rCount = 0;<br>
+		 $text = "+1888887";<br>
+		 $normal = ['0', '1', '2', '3', '4', '5','6', '7', '8','9',<br>
+		  '-1', '-2', '-3', '-4', '-5','-6', '-7', '-8','-9'];<br>
 
-	 	$letters = preg_split('//', $text, -1, PREG_SPLIT_NO_EMPTY);<br>
-	 	foreach ($letters as $key => $value) {<br>
-	 	if($value == $varl){ $lCount++; }<br>
-	 	if($value == $varr){ $rCount++; }<br>
-	 	}<br>
-	 	if($lCount == $rCount){ echo "Скобки расставлены правильно";}else {<br>
-	 		echo "Скобки расставлены неправильно!";<br>
-	 	}<br>
+
+		 $letters = preg_split('//', $text, -1, PREG_SPLIT_NO_EMPTY);<br>
+
+
+		 foreach ($letters as $key => $value) {<br>
+		   foreach ($normal as $key2 => $value2) {<br>
+		     if($key == 0 && $value == "-"){break;}<br>
+		 		if($key == 0 && $value == "+"){break;}<br>
+		 		if($value == $value2){ break;}<br>
+		 		if($value2 == end($normal)){ echo "запись неправильна!";  break 2; }<br>
+		   }<br>
+		 	if($value == end($letters)){ echo "запись правильна!"; break; }<br>
+
+
+		 }<br>
 
 		ОТВЕТ: <br>
-		Lorem ipsum )dolor sit amet), consectetur adipiscing elit.<br>
-		Curabitur in lectus vitae ligula faucibus pulvinar. Aenean lobortis,<br>
-		ex eget consectetur suscipit, urna nisi imperdiet tortor, vel cursus<br>
-		ligula enim at tellus. In vel dictum arcu. Etiam eu purus pretium,<br>
-		sollicitudin sem et, efficitur augue. Vivamus volutpat velit arcu.<br>
+
 <br>
 <?php
 
