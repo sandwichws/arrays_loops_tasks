@@ -58,8 +58,8 @@ foreach ($arr as $key => $value) {
 	echo $value, " ";
 }
 
- array_splice($arr, $minIndex, 1, $max);
- array_splice($arr, $maxIndex, 1, $min);
+ $arr[$minIndex] = $max;
+  $arr[$maxIndex] = $min;
 
 echo "<br>", "измененный массив: ";
 foreach ($arr as $key => $value) {
