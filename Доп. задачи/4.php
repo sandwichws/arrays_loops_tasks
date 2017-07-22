@@ -32,25 +32,25 @@
 		sollicitudin sem et, efficitur augue. Vivamus volutpat velit arcu.<br>
 <br>
 <?php
-
-$text = "Lorem ipsum )dolor sit amet), consectetur adipiscing elit.
-Curabitur in lectus vitae ligula faucibus pulvinar. Aenean lobortis,
-ex eget consectetur suscipit, urna nisi imperdiet tortor, vel cursus
-ligula enim at tellus. In vel dictum arcu. Etiam eu purus pretium,
-sollicitudin sem et, efficitur augue. Vivamus volutpat velit arcu.";
-
+$text = "2*)4+5-(3*2()";
 $varl = "(";
 $varr = ")";
 $lCount = 0;
 $rCount = 0;
-
+$right = false;
 $letters = preg_split('//', $text, -1, PREG_SPLIT_NO_EMPTY);
 foreach ($letters as $key => $value) {
 if($value == $varl){ $lCount++; }
-if($value == $varr){ $rCount++; }
+if($value == $varr) { $rCount++; }
+if($value == $varr && $lCount < $rCount) {
+	echo "Скобки расставлены неправильно!"; $right = true; break; }
 }
-if($lCount == $rCount){ echo "Скобки расставлены правильно";}else {
-	echo "Скобки расставлены неправильно!";
+
+if($lCount == $rCount){
+	echo "Скобки расставлены правильно!";}
+
+if($lCount != $rCount && $right == false){
+echo "Скобки расставлены неправильно!";
 }
 
 ?>
