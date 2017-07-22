@@ -31,7 +31,7 @@
 <br>
 <?php
 
-$text = "-1888887";
+$text = "+1888887";
 $normal = ['0', '1', '2', '3', '4', '5','6', '7', '8','9',
  '-1', '-2', '-3', '-4', '-5','-6', '-7', '-8','-9'];
 
@@ -42,6 +42,7 @@ $letters = preg_split('//', $text, -1, PREG_SPLIT_NO_EMPTY);
 foreach ($letters as $key => $value) {
   foreach ($normal as $key2 => $value2) {
     if($key == 0 && $value == "-"){break;}
+		if($key == 0 && $value == "+"){break;}
 		if($value == $value2){ break;}
 		if($value2 == end($normal)){ echo "запись неправильна!";  break 2; }
   }
