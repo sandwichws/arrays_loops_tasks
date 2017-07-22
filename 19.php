@@ -27,9 +27,10 @@
 $arr = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday",
 "Saturday", "Sunday"];
 $day = [];
+date_default_timezone_set('UTC');
 array_push($day, $arr[3]);
 foreach ($arr as $value):
-if($value == $day[0]): ?>
+if($value == date('l')): ?>
 <b> <?php echo  $value , " "; ?></b>
 <?php else: echo $value, " "; ?>
 <?php endif ?>

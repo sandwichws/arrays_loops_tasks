@@ -9,9 +9,9 @@
 	выведите все месяцы, а текущий месяц выведите жирным.
 	Текущий месяц должен храниться в переменной $month.<br><br>
     РЕШЕНИЕ:
-		$arr = ["January", "February", "March", "April", "May", "June", "Jule",
+		$arr = ["January", "February", "March", "April", "May", "June", "July",
 		"August", "September", "October", "November", "December"];<br>
-		$month = $arr[6];<br>
+		$month = date('F');<br>
 		foreach ($arr as $value): <br>
 		if($value == $month): <br>
 	  b> echo $month, " ";  b> <br>
@@ -24,9 +24,11 @@
 
 		ОТВЕТ: <br>
 <?php
-$arr = ["January", "February", "March", "April", "May", "June", "Jule",
+$arr = ["January", "February", "March", "April", "May", "June", "July",
 "August", "September", "October", "November", "December"];
-$month = $arr[6];
+date_default_timezone_set('UTC');
+
+$month = date('F');
 foreach ($arr as $value):
 if($value == $month): ?>
 <b> <?php echo $month, " "; ?></b>
