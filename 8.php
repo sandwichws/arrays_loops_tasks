@@ -12,7 +12,6 @@
 
 		$arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];<br>
 		foreach ($arr as $key => $value) {<br>
-				(string)$value;<br>
 				echo $value;<br>
  	 }<br><br>
 
@@ -21,9 +20,7 @@
 		<?php
 			$arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 			foreach ($arr as $key => $value) {
-          (string)$value;
 					echo $value;
-
 			}
 		?>
 
