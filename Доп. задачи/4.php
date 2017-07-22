@@ -2,34 +2,34 @@
 
 <html>
 	<head>
-		<title>Доп Задание 5</title>
+		<title>Доп Задание 4</title>
   <head>
    <body>
-		 Доп ЗАДАЧА 5. Определить, является ли
-		 строка правильной записью целого числа.
+		 Доп ЗАДАЧА 4. Определить, правильно ли в тексте расставлены круглые скобки
 <br><br>
 
      РЕШЕНИЕ:<br><br>
-		 $varl = "(";<br>
-	 	$varr = ")";<br>
-	 	$lCount = 0;<br>
-	 	$rCount = 0;<br>
+		 $text = "2*)4+5-(3*2()";<br>
+ 		$varl = "(";<br>
+ 		$varr = ")";<br>
+ 		$lCount = 0;<br>
+ 		$rCount = 0;<br>
+ 		$right = false;<br>
+ 		$letters = preg_split('//', $text, -1, PREG_SPLIT_NO_EMPTY);<br>
+ 		foreach ($letters as $key => $value) {<br>
+ 		if($value == $varl){ $lCount++; }<br>
+ 		if($value == $varr) { $rCount++; }<br>
+ 		if($value == $varr && $lCount < $rCount) {<br>
+ 			echo "Скобки расставлены неправильно!"; $right = true; break; }<br>
+ 		}<br>
 
-	 	$letters = preg_split('//', $text, -1, PREG_SPLIT_NO_EMPTY);<br>
-	 	foreach ($letters as $key => $value) {<br>
-	 	if($value == $varl){ $lCount++; }<br>
-	 	if($value == $varr){ $rCount++; }<br>
-	 	}<br>
-	 	if($lCount == $rCount){ echo "Скобки расставлены правильно";}else {<br>
-	 		echo "Скобки расставлены неправильно!";<br>
-	 	}<br>
+ 		if($lCount == $rCount){<br>
+ 			echo "Скобки расставлены правильно!";}<br>
 
-		ОТВЕТ: <br>
-		Lorem ipsum )dolor sit amet), consectetur adipiscing elit.<br>
-		Curabitur in lectus vitae ligula faucibus pulvinar. Aenean lobortis,<br>
-		ex eget consectetur suscipit, urna nisi imperdiet tortor, vel cursus<br>
-		ligula enim at tellus. In vel dictum arcu. Etiam eu purus pretium,<br>
-		sollicitudin sem et, efficitur augue. Vivamus volutpat velit arcu.<br>
+ 		if($lCount != $rCount && $right == false){<br>
+ 		echo "Скобки расставлены неправильно!";<br>
+ 		}<br>
+
 <br>
 <?php
 $text = "2*)4+5-(3*2()";
