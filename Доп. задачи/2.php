@@ -5,17 +5,19 @@
 		<title>Доп Задание 2</title>
   <head>
    <body>
-		 Доп ЗАДАЧА 2. Дан текст. Определить какая из двух
-		 заданных букв встечается чаще.
+		 Доп ЗАДАЧА 2. Дано случайное число. Определить простое ли оно
 <br><br>
 
      РЕШЕНИЕ:<br><br>
 		 $nums = rand(0, 1000);<br>
+		 $issimple = false;<br>
 		 for($i = 2; $i < 11; $i++){<br>
-		 if(is_int($nums/$i) == true && $nums !== 2){<br>
-		 	echo "Число $nums не является простым"; break;  }<br>
-		 if($i == 10){ echo "Число $nums является простым"; }<br>
+		 if(is_int($nums/$i) == true && $nums != $i){<br>
+		 	echo "Число $nums не является простым";<br>
+		 	$issimple = true; break;  }<br>
 		 }<br>
+		 if($issimple == false){echo "Число $nums является простым";}<br>
+
 
 
 		ОТВЕТ: <br>
@@ -23,7 +25,7 @@
 <?php
 
 
-$nums = 157;
+$nums = rand(0, 1000);
 $issimple = false;
 for($i = 2; $i < 11; $i++){
 if(is_int($nums/$i) == true && $nums != $i){
