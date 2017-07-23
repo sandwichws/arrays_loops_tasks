@@ -22,18 +22,17 @@
 
 		ОТВЕТ: <br>
 
-<?php
+		<?php
+		$nums = rand();
+		$root = round(sqrt($nums));
+		$issimple = false;
+		for($i = 2; $i <= $root; $i++){
+		if($nums % $i == false && $nums != $i){
+			echo "Число $nums не является простым";
+			$issimple = true; break;  }
+		}
+		if($issimple == false){echo "Число $nums является простым";}
 
-
-$nums = rand(0, 1000);
-$issimple = false;
-for($i = 2; $i < 11; $i++){
-if(is_int($nums/$i) == true && $nums != $i){
-	echo "Число $nums не является простым";
-	$issimple = true; break;  }
-}
-if($issimple == false){echo "Число $nums является простым";}
-
-?>
+		?>
    </body>
 <html>
